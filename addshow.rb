@@ -155,7 +155,7 @@ def reload_rtorrent
 	else
 		conn = XMLRPC::Client.new('localhost', '/RPC2', 80)
 		begin
-			conn.call('import', '', "@addshow_config['rtorrent']['config_shows']")
+			conn.call('import', '', "#{@addshow_config['rtorrent']['config_shows']}")
 		rescue XMLRPC::FaultException => e
 			puts "Whoa, looks like your xmlrpc configuration on rtorrent is a little funny. You'll have to reload or restart rtorrent manually. The full error is below:"
 			puts e.faultString
