@@ -15,7 +15,7 @@ rss:
 rtorrent:
   # main config file (to check for scgi port)
   config_main: '/home/william/.rtorrent.rc'
-	# secondary config file to make reloads nice. if you insist on not separating the configs, set it to the same value as the main config.
+  # secondary config file to make reloads nice. if you insist on not separating the configs, set it to the same value as the main config.
   config_shows: '/home/william/.rtorrent.shows'
 
 ####################
