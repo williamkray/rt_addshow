@@ -21,9 +21,9 @@ end
 
 # this actually creates the watch and destination directories, and if necessary applies the appropriate permissions to them
 def make_folders
-	permission_error = "####################" +
-			"WARNING:" +
-			"####################" +
+	permission_error = "####################\n" +
+			"WARNING:\n" +
+			"####################\n\n" +
 			"Looks like you're getting permission issues. You have a few options:\n" + 
 			"	a) change the ownership manually after this script runs (easiest)\n" +
 			"	b) delete these folders and re-run this script as the user you're trying to set permissions for\n" +
