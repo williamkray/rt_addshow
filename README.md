@@ -5,7 +5,7 @@ This script will automatically update your rtorrent and rss application configur
 
 SETUP:
 ======
-i strongly recommend setting a secondary rtorrent config file for your shows, and adding the following line to your main rtorrent config file (assuming the secondary config is called ~/.rtorrent.shows): 
+I strongly recommend setting a secondary rtorrent config file for your shows, and adding the following line to your main rtorrent config file (assuming the secondary config is called ~/.rtorrent.shows): 
 
 import=~/.rtorrent.shows
 
@@ -31,3 +31,4 @@ This script currently only supports rssdler (https://code.google.com/p/rssdler/)
 
 If the script has trouble reloading the rtorrent config, or your rtorrent is not configured to use xmlrpc commands, you will need to manually reload or restart rtorrent to see changes. to reload the config from the rtorrent n-curses interface, hit CTRL-X to run a command, and type the same line as the one you added to your config file. easy.
 
+If you have specific needs about the file ownership of the watch and destination directories, you can designate them in the yml config file. However, this assumes that you run the script with sudo, or as root, with also assumes that the config file exists in root's home directory. Otherwise, it would probably be easiest to run the script as the user with the proper permissions.
