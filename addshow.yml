@@ -1,0 +1,43 @@
+# BE WARNED: YAML files are very sensitive about formatting.
+# if you make changes to this file, be sure to run it through
+# a YAML syntax checker to prevent misconfiguration :)
+
+# RSS parsing app info. Currently only supports rssdler,
+# with plans to support Flexget in the future.
+# an "app" line MUST be uncommented! use "none"
+# to avoid the rss app altogether.
+rss:
+#  app: 'none'
+  app: 'rssdler'
+  config: '/home/william/.rssdler/config.txt'
+
+# full path to rtorrent configuration
+rtorrent:
+  # main config file (to check for scgi port)
+  config_main: '/home/william/.rtorrent.rc'
+	# secondary config file to make reloads nice. if you insist on not separating the configs, set it to the same value as the main config.
+  config_shows: '/home/william/.rtorrent.shows'
+
+####################
+# Directory creation options:
+# path is the full path to the directory you
+# want to create new directories in. Directories
+# will be named based on the name of the show.
+# ex: if watch path is '/home/user/torrents'
+# then the directory '/home/user/torrents/A_TV_Show'
+# will be created
+####################
+
+# config options for watch directories
+watch:
+  path: '/home/william/test/torrents'
+  owner: null
+  group: null
+  mode: 'u=rwx,go=rx'
+
+# config options for destination directories
+dest:
+  path: '/home/william/test/tv_shows'
+  owner: null
+  group: null
+  mode: 'u=rwx,go=rx'
