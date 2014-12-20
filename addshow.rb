@@ -153,9 +153,11 @@ def reload_rtorrent
 	if @xmlrpc_port == nil
 		puts "No xmlrpc port defined, skipping rtorrent reload. You can reload your config file manually, or restart rtorrent to see configuration changes."
 	else
+		puts "Reloading rtorrent config file..."
 		conn = XMLRPC::Client.new('localhost', '/RPC2', 80)
 		begin
 			conn.call('import', '', "#{@addshow_config['rtorrent']['config_shows']}")
+			puts "Done!"
 		rescue XMLRPC::FaultException => e
 			puts "Whoa, looks like your xmlrpc configuration on rtorrent is a little funny. You'll have to reload or restart rtorrent manually. The full error is below:"
 			puts e.faultString
