@@ -24,10 +24,7 @@ def make_folders
 	permission_error = "####################\n" +
 			"WARNING:\n" +
 			"####################\n\n" +
-			"Looks like you're getting permission issues. You have a few options:\n" + 
-			"	a) change the ownership manually after this script runs (easiest)\n" +
-			"	b) delete these folders and re-run this script as the user you're trying to set permissions for\n" +
-			"	c) use sudo/root to run this script"
+			"Looks like you're getting permission issues. Resorting to a more low-brow method of changing permissions" 
 
 	puts "Making folders"
 	FileUtils.mkdir_p(@watch_dir)
@@ -44,6 +41,11 @@ def make_folders
 			FileUtils.chown(@addshow_config['watch']['owner'], @addshow_config['watch']['group'], @watch_dir, :verbose => true)
 		rescue
 			puts permission_error
+			if File.exists?('/usr/bin/sudo')
+				`sudo chmod #{@addshow_config['watch']['owner']}:#{@addshow_config['watch']['group']} #{@watch_dir}`
+			else
+				`su - root -c chmod #{@addshow_config['watch']['owner']}:#{@addshow_config['watch']['group']} #{@watch_dir}`
+			end
 		end
 	end
 
@@ -58,6 +60,11 @@ def make_folders
 			FileUtils.chown(@addshow_config['dest']['owner'], @addshow_config['dest']['group'], @dest_dir, :verbose => true)
 		rescue
 			puts permission_error
+			if File.exists?('/usr/bin/sudo')
+				`sudo chmod #{@addshow_config['watch']['owner']}:#{@addshow_config['watch']['group']} #{@watch_dir}`
+			else
+				`su - root -c chmod #{@addshow_config['watch']['owner']}:#{@addshow_config['watch']['group']} #{@watch_dir}`
+			end
 		end
 	end
 
