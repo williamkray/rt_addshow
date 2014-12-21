@@ -7,7 +7,7 @@ require 'pp'
 
 @show_name = ARGV[0]
 @show_url = ARGV[1]
-@addshow_config = YAML.load_file("/home/#{ENV['USER']}/.addshow.yml")
+@addshow_config = YAML.load_file("#{ENV['HOME']}/.addshow.yml")
 @xmlrpc_port = nil
 @rt_config_lines = nil
 @watch = nil
