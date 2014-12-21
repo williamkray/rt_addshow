@@ -61,9 +61,9 @@ def make_folders
 		rescue
 			puts permission_error
 			if File.exists?('/usr/bin/sudo')
-				`sudo chmod #{@addshow_config['watch']['owner']}:#{@addshow_config['watch']['group']} #{@watch_dir}`
+				`sudo chown #{@addshow_config['watch']['owner']}:#{@addshow_config['watch']['group']} #{@watch_dir}`
 			else
-				`su - root -c chmod #{@addshow_config['watch']['owner']}:#{@addshow_config['watch']['group']} #{@watch_dir}`
+				`su - root -c chown #{@addshow_config['watch']['owner']}:#{@addshow_config['watch']['group']} #{@watch_dir}`
 			end
 		end
 	end
