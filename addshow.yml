@@ -9,14 +9,14 @@
 rss:
 #  app: 'none'
   app: 'rssdler'
-  config: '/home/william/.rssdler/config.txt'
+  config: '/home/YOUR_USERNAME_HERE/.rssdler/config.txt'
 
 # full path to rtorrent configuration
 rtorrent:
   # main config file (to check for scgi port)
-  config_main: '/home/william/.rtorrent.rc'
+  config_main: '/home/YOUR_USERNAME_HERE/.rtorrent.rc'
   # secondary config file to make reloads nice. if you insist on not separating the configs, set it to the same value as the main config.
-  config_shows: '/home/william/.rtorrent.shows'
+  config_shows: '/home/YOUR_USERNAME_HERE/.rtorrent.shows'
 
 ####################
 # Directory creation options:
@@ -30,14 +30,14 @@ rtorrent:
 
 # config options for watch directories
 watch:
-  path: '/home/william/test/torrents'
+  path: '/home/YOUR_USERNAME_HERE/torrents'
   owner: null
   group: null
   mode: 'u=rwx,go=rx'
 
 # config options for destination directories
 dest:
-  path: '/home/william/test/tv_shows'
+  path: '/home/YOUR_USERNAME_HERE/tv_shows'
   owner: null
   group: null
   mode: 'u=rwx,go=rx'
