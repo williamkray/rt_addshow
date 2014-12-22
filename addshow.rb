@@ -72,7 +72,7 @@ end
 
 # this writes out a string of text with some values in it to add to your rtorrent config file
 def get_rt_line
-	@rt_config_lines = "\n\n## #{@title}\nschedule = watch_directory_#{@digit},5,5,\"load_start=#{@watch}/*.torrent,d.set_custom1=#{@dest}/d.delete_tied=\""
+	@rt_config_lines = "\n\n## #{@title}\nschedule = watch_directory_#{@digit},5,5,\"load_start=#{@watch}/*.torrent,d.set_custom1=#{@dest}/,d.delete_tied=\""
 end
 
 # this appends the necessary lines to our rss app and rtorrent config files
