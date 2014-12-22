@@ -17,6 +17,8 @@ rtorrent:
   config_main: '/home/YOUR_USERNAME_HERE/.rtorrent.rc'
   # secondary config file to make reloads nice. if you insist on not separating the configs, set it to the same value as the main config.
   config_shows: '/home/YOUR_USERNAME_HERE/.rtorrent.shows'
+	# dissociate from torrent file and automatically delete it when the download begins?
+	delete_tied: 'true'
 
 ####################
 # Directory creation options:
