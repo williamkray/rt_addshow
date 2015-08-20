@@ -60,11 +60,7 @@ def make_folders
       FileUtils.chown(@addshow_config['dest']['owner'], @addshow_config['dest']['group'], @dest_dir, :verbose => true)
     rescue
       puts permission_error
-      if !(`which sudo`).chomp.nil?
-        `sudo chown #{@addshow_config['watch']['owner']}:#{@addshow_config['watch']['group']} #{@watch_dir}`
-      else
-        `su - root -c chown #{@addshow_config['watch']['owner']}:#{@addshow_config['watch']['group']} #{@watch_dir}`
-      end
+      `#{@root_cmd} chown #{@addshow_config['dest']['owner']}:#{@addshow_config['dest']['group']} #{@dest_dir}`
     end
   end
 
